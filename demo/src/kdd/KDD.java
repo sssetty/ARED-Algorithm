@@ -121,23 +121,7 @@ public class KDD {
         for (int columnNo = 0; columnNo < 15; columnNo++) {
             pc[columnNo] = new float[4][10];
 
-            //System.out.println("\n\n*******************  " + columnNo + "  *********************");
-            /*for (int i = 0; i < 10; i++) {
-             // System.out.print(i + " ");
-             for (int j = 0; j < 178; j++) {
-             if(newMatrix[columnNo][i][j] != 0){
-             System.out.print(newMatrix[columnNo][i][j] + " ");
-             }
-             }
-             System.out.println("");
-             }*/
-            /*for (int i=0; i<(newMatrix[columnNo].length); i++ ) {
-             for (int j=0;j<newMatrix[columnNo][i].length;j++){
-             System.out.print(newMatrix[columnNo][i][j]+" ");
-             }
-             System.out.println();
-             }*/
-            //float pc[]=new flot[newMatrix[columnNo].length];
+            
             System.out.println("\n\n************************" + columnNo + " PC d1**********************************");
             pc[columnNo][0] = new float[newMatrix[columnNo].length];
             for (int k = 0; k < newMatrix[columnNo].length; k++) {
@@ -243,62 +227,12 @@ public class KDD {
                 System.out.format("%3f", pc[columnNo][3][q]);
             }
         }
-        // System.out.print(Arrays.deepToString(p));
-        //System.out.println();
-        //System.out.println(p[0].length);
 
-//calculating the support of p->d1
-    /*for (int k =0; k <a.length ;k++)
-         {
-         int count=0;
-         for(int i = 0; i <a[k].length; i++)
-         {
-         for(int j = 0; j <d1.length; j++)
-         {
-         if(a[k][i]==d1[j])
-         {
-         count++;
-         }
-         }
-            
-         }
-         System.out.println(count);
-         }
-        
-         System.out.println();
-
-         }
-         }
-         */
-        //printing of action rules threshold=0.5
-        //printing pc matrix
-        /*for (int columnNo = 0; columnNo < 15; columnNo++)
-         {
-         for(int i=0;i<4;i++)
-            
-         {
-         for (int j = 0; j < 10; j++) 
-         {
-                
-         System.out.print(pc[columnNo][i][j] + " ");
-         System.out.println("");
-         }
-         }
-         System.out.println("");
-         }
-         /*for (int i=0; i<(newMatrix[columnNo].length); i++ ) {
-         for (int j=0;j<newMatrix[columnNo][i].length;j++){
-         System.out.print(newMatrix[columnNo][i][j]+" ");
-         }
-         System.out.println();
-         */
         System.out.println();
         for (int i = 0; i < 15; i++) {
-            //System.out.println("Hi");
             if (i < 12) {
                 for (int j = 0; j < 4; j++) {
 
-                    //System.out.println("bye");
                     for (int k = 0; k < 10; k++) {
 
                         for (int l = 0; l < 10; l++) {
@@ -380,14 +314,11 @@ public class KDD {
             } else if (i > 12) {
                
                 for (int j = 0; j < 4; j++) {
-            //System.out.println("bye");
                     for (int q = 0; q < 4; q++) {
                         if (j < q) {
                              
                             for (int k = 0; k < 10; k++) {
-                                //System.out.println("Here");
                                 if ((pc[i][j][k] * pc[i][q][k]) > 0.1) {
-                                    //System.out.println("Here........");
                                     switch (i) {
                                         case 13: {
                                             System.out.println("(POPULATION" + (k + 1) + "-->" + "POPULATION" + (k + 1) + ")" + "-->" + "(STATE" + (j + 1) + "-->" + "STATE" + (q + 1) + ")");
